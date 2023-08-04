@@ -8,7 +8,7 @@
 import UIKit
 
 var contactList = ContactsList()
-
+var myIndex = 0
 class ContactsTableViewController: UITableViewController {
 
     @IBAction func addContactButton(_ sender: UIBarButtonItem) {
@@ -22,13 +22,17 @@ class ContactsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         
-        
+        navigationItem.title = "Contacts"
         navigationController?.navigationBar.tintColor = .systemRed
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: nil)
         
+                
+                
         
     }
 
+    @IBAction func refreshTable(_ sender: UIBarButtonItem) {
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,7 +77,10 @@ class ContactsTableViewController: UITableViewController {
             
         }    
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "segueDetail", sender: self)
+    }
 
     /*
     // Override to support rearranging the table view.

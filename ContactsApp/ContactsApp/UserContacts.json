@@ -1,0 +1,29 @@
+{
+   "contacts": [
+      {
+        "Name": "Majid",
+        "Number": "548-333-6412",
+        "Email": "majidpawar@gmail.com"
+      },
+      {
+          "Name": "Jayant",
+          "Number": "416-323-3422",
+          "Email": "jayant@gmail.com"
+      },
+      {
+          "Name": "Prashant",
+          "Number": "614-232-5434",
+          "Email": "prashant@gmail.com"
+      },
+      {
+          "Name": "Pankaj",
+          "Number": "548-225-9865",
+          "Email": "pankaj@gmail.com"
+      },
+      {
+          "Name": "Bontu",
+          "Number": "614-211-9889",
+          "Email": "bontu@gmail.com"
+      }
+    ]
+}

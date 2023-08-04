@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,6 +46,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ADl-uK-vfw" kind="showDetail" identifier="segueDetail" id="ZE4-WN-beB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -53,14 +57,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="FP5-1f-ELi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="Etd-Gc-otB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Etd-Gc-otB">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="refreshTable:" destination="yh6-Tf-H6d" id="ci3-qn-NsF"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gj1-R2-PFe">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <action selector="addContactButton:" destination="yh6-Tf-H6d" id="ZAt-oB-Jew"/>
-                                <segue destination="cyt-bg-jWI" kind="show" id="Egl-nx-yBs"/>
+                                <segue destination="cyt-bg-jWI" kind="show" identifier="segueAdd" id="Egl-nx-yBs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -69,19 +76,88 @@
             </objects>
             <point key="canvasLocation" x="761.06870229007632" y="-55.633802816901408"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Detail View Controller-->
+        <scene sceneID="HSv-cs-9Hh">
+            <objects>
+                <viewController id="ADl-uK-vfw" customClass="ContactDetailViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lig-Zn-k3z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xq1-79-by5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ajy-Sp-A0I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvC-JK-hjn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="759"/>
+        </scene>
+        <!--Add Contact View Controller-->
         <scene sceneID="sjm-xi-I9p">
             <objects>
-                <viewController id="cyt-bg-jWI" sceneMemberID="viewController">
+                <viewController id="cyt-bg-jWI" customClass="AddContactViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vW-Hg-TOs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-bW-V3Z">
+                                <rect key="frame" x="16" y="229" width="119" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z39-kI-jX5">
+                                <rect key="frame" x="16" y="278" width="119" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-LZ-gku">
+                                <rect key="frame" x="16" y="188" width="119" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter Name!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-qM-6ht">
+                                <rect key="frame" x="171" y="188" width="206" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameField:" destination="cyt-bg-jWI" eventType="editingDidEnd" id="JGa-5J-lgr"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter Number!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heN-fP-aHq">
+                                <rect key="frame" x="171" y="230" width="206" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="numberField:" destination="cyt-bg-jWI" eventType="editingDidEnd" id="0u6-En-M9I"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter Email!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-Yo-xRE">
+                                <rect key="frame" x="171" y="272" width="206" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailFIeld:" destination="cyt-bg-jWI" eventType="editingDidEnd" id="UhQ-tM-3AC"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wmH-fE-97z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="gaj-o7-Osn">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lfw-ZT-1fN">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="saveContact:" destination="cyt-bg-jWI" id="reW-eZ-t7k"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>

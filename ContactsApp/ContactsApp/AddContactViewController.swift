@@ -8,14 +8,37 @@
 import UIKit
 
 class AddContactViewController: UIViewController {
-
+    
+    var addName: String = ""
+    var addNumber: String = ""
+    var addEmail: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
-
+    @IBAction func nameField(_ sender: UITextField) {
+        addName = sender.text!
+    }
+    
+    @IBAction func numberField(_ sender: UITextField) {
+        addNumber = sender.text!
+            
+    }
+    
+    
+    @IBAction func emailFIeld(_ sender: UITextField) {
+        addEmail = sender.text!
+    }
+    
+    
+    @IBAction func saveContact(_ sender: UIBarButtonItem) {
+            contactList.addContact(Name: addName, Number: addNumber, Email: addEmail)
+            
+    }
+    
     /*
     // MARK: - Navigation
 
