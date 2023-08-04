@@ -9,24 +9,30 @@ import Foundation
 
 class ContactsList{
     
-    var list = [Contacts]()
+    var contacts = [Contact]()
     
-    private var templates = ["Majid","Vaishnavi","Jayant","Prashant","Pankaj","Bontu"]
-    
-    init(_ count: Int){
-        for _ in 1...count {
-            addContact()
+    // Do not modify this init method. it is used to add default movies to your movies array
+    init(){
+        if let url = Bundle.main.url(forResource: "UserContacts", withExtension: "json"){
+            do {
+                
+                let data = try Data(contentsOf: url)
+
+                let decoder = JSONDecoder()
+                
+                let results = try decoder.decode(Contacts.self, from: data)
+                
+                contacts = results.contacts
+                                
+            } catch {
+                   fatalError("cannot convert JSON to contacts: \(error)")
+            }
+        } else {
+            print("something went wrong when geting url")
         }
     }
-    func addContact(){
-        let index = Int.random(in: 0..<templates.count)
-        let name = templates[index]
-        let newList = Contacts(name: name)
-        list.append(newList)
-    }
     
-    func deleteContact(indexPath: IndexPath ){
-        let index = indexPath.row
-        list.remove(at: index)
+    func addContact(Name: String, Number: String, Email: String){
+        self.contacts.append(Contact(Name: Name, Number: Number, Email: Email))
     }
 }

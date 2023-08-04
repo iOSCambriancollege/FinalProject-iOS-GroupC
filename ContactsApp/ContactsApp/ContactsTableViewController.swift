@@ -7,9 +7,13 @@
 
 import UIKit
 
+var contactList = ContactsList()
+
 class ContactsTableViewController: UITableViewController {
 
-    var contactlist = ContactsList(6)
+    @IBAction func addContactButton(_ sender: UIBarButtonItem) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +21,12 @@ class ContactsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        navigationController?.navigationBar.tintColor = .systemRed
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: nil)
+        
+        
     }
 
     // MARK: - Table view data source
@@ -29,14 +38,15 @@ class ContactsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return contactlist.list.count
+        return contactList.contacts.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactListCell", for: indexPath)
         let row = indexPath.row
-        cell.textLabel?.text = contactlist.list[row].name
+        cell.textLabel?.text = contactList.contacts[row].Name
 //         Configure the cell...
 
         return cell
@@ -56,10 +66,11 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            contactlist.deleteContact(indexPath: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            contactList.contacts.remove(at: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            
         }    
     }
     

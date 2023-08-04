@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yh6-Tf-H6d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JqD-Ud-ofd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,9 +37,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <imageReference key="image" image="person.crop.circle" catalog="system" symbolScale="large" renderingMode="hierarchical">
                                                 <hierarchicalColors>
-                                                    <color red="0.84313726430000002" green="0.60784316059999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="systemRedColor"/>
                                                     <color systemColor="secondaryLabelColor"/>
-                                                    <color systemColor="tertiaryLabelColor"/>
+                                                    <color name="AccentColor"/>
                                                 </hierarchicalColors>
                                             </imageReference>
                                         </imageView>
@@ -51,22 +52,75 @@
                             <outlet property="delegate" destination="yh6-Tf-H6d" id="OJ8-Kc-0J6"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="FP5-1f-ELi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="Etd-Gc-otB">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gj1-R2-PFe">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="addContactButton:" destination="yh6-Tf-H6d" id="ZAt-oB-Jew"/>
+                                <segue destination="cyt-bg-jWI" kind="show" id="Egl-nx-yBs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGj-3a-rFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165" y="-55"/>
+            <point key="canvasLocation" x="761.06870229007632" y="-55.633802816901408"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sjm-xi-I9p">
+            <objects>
+                <viewController id="cyt-bg-jWI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6vW-Hg-TOs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wmH-fE-97z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gaj-o7-Osn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lfw-ZT-1fN">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e59-fV-T5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="-56"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OBO-p0-9WZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JqD-Ud-ofd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z1X-at-f04">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yh6-Tf-H6d" kind="relationship" relationship="rootViewController" id="MZN-2P-taa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ew0-vD-iLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165.64885496183206" y="-55.633802816901408"/>
         </scene>
     </scenes>
     <resources>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
