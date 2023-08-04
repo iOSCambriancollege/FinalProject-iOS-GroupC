@@ -15,10 +15,18 @@ class ContactsList{
     
     init(_ count: Int){
         for _ in 1...count {
-            let index = Int.random(in: 0..<templates.count)
-            let name = templates[index]
-            let newList = Contacts(name: name)
-            list.append(newList)
+            addContact()
         }
+    }
+    func addContact(){
+        let index = Int.random(in: 0..<templates.count)
+        let name = templates[index]
+        let newList = Contacts(name: name)
+        list.append(newList)
+    }
+    
+    func deleteContact(indexPath: IndexPath ){
+        let index = indexPath.row
+        list.remove(at: index)
     }
 }
