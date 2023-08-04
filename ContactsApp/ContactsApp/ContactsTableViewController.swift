@@ -9,6 +9,7 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
+    var contactlist = ContactsList(6)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,23 +24,24 @@ class ContactsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return contactlist.list.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactListCell", for: indexPath)
+        let row = indexPath.row
+        cell.textLabel?.text = contactlist.list[row].name
+//         Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
