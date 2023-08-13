@@ -63,10 +63,10 @@ class AddContactViewController: UIViewController {
         addDOB = sender.text!
     }
     
-    @IBAction func saveContact(_ sender: UIBarButtonItem) {
+    @IBAction func saveButton(_ sender: Any) {
         contactList.addContact(Name: addName, Number: addNumber, Email: addEmail, DOB: addDOB)
-            
     }
+    
     
     /*
     // MARK: - Navigation

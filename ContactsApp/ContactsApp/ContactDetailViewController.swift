@@ -18,6 +18,9 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet weak var detailEmail: UILabel!
     @IBOutlet weak var detailNumber: UILabel!
     @IBOutlet weak var detailName: UILabel!
+    
+    
+    
     var index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +70,9 @@ class ContactDetailViewController: UIViewController {
             print("Cannot open email!")
         }
     }
-    
+    @IBAction func deleteContactButton(_ sender: UIButton) {
+        contactList.contacts.remove(at: index)
+    }
     
     
     //Function Call Button
@@ -84,7 +89,12 @@ class ContactDetailViewController: UIViewController {
     //Function Message Button
     //This function has been tested on a physical iPhone device and it works completely
     @IBAction func messageButtonClicked(_ sender: Any) {
-        
+        guard let number = URL(string: "sms:" + (contactList.contacts[index].Number)) else { return }
+        if UIApplication.shared.canOpenURL(number) {
+            UIApplication.shared.open(number, options: [:], completionHandler: nil)
+        } else {
+            print("Cannot open sms!")
+        }
     }
 }
 
