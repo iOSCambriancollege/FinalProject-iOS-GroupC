@@ -32,7 +32,7 @@ class ContactsList{
         }
     }
     
-    func addContact(Name: String, Number: String, Email: String){
-        self.contacts.append(Contact(Name: Name, Number: Number, Email: Email))
+    func addContact(Name: String, Number: String, Email: String, DOB: String){
+        self.contacts.append(Contact(Name: Name, Number: Number, Email: Email, DOB: DOB))
     }
 }

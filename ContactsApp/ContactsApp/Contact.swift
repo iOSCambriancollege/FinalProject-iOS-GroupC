@@ -15,12 +15,13 @@ class Contact: Codable {
     var Name: String
     var Number: String
     var Email: String
-    var Image: Data?
+    var DOB: String
     
-    init(Name: String, Number: String, Email: String) {
+    init(Name: String, Number: String, Email: String, DOB: String) {
         self.Name = Name
         self.Number = Number
         self.Email = Email
+        self.DOB = DOB
     }
 
 }

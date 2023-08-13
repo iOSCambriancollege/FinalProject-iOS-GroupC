@@ -1,29 +1,35 @@
 {
    "contacts": [
       {
-        "Name": "Majid",
+        "Name": "Majid Pawar",
         "Number": "548-333-6412",
-        "Email": "majidpawar@gmail.com"
+        "Email": "majidpawar@gmail.com",
+        "DOB": "9-10-1997"
+        
       },
       {
-          "Name": "Jayant",
+          "Name": "Jayant Pawar",
           "Number": "416-323-3422",
-          "Email": "jayant@gmail.com"
+          "Email": "jayant@gmail.com",
+          "DOB": "17-02-1996"
       },
       {
-          "Name": "Prashant",
+          "Name": "Prashant Pawar",
           "Number": "614-232-5434",
-          "Email": "prashant@gmail.com"
+          "Email": "prashant@gmail.com",
+          "DOB": "12-10-1994"
       },
       {
-          "Name": "Pankaj",
+          "Name": "Pankaj Pawar",
           "Number": "548-225-9865",
-          "Email": "pankaj@gmail.com"
+          "Email": "pankaj@gmail.com",
+          "DOB": "11-5-1992"
       },
       {
-          "Name": "Bontu",
+          "Name": "Bontu Pawar",
           "Number": "614-211-9889",
-          "Email": "bontu@gmail.com"
+          "Email": "bontu@gmail.com",
+          "DOB": "5-8-1998"
       }
     ]
 }

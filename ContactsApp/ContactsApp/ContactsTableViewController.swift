@@ -21,12 +21,8 @@ class ContactsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.tintColor = .systemRed
-        
-                
-                
         
     }
 
@@ -78,9 +74,10 @@ class ContactsTableViewController: UITableViewController {
         }    
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
-        performSegue(withIdentifier: "segueDetail", sender: self)
+        var indexList = indexPath.row
+            
     }
+
 
     /*
     // Override to support rearranging the table view.
@@ -97,14 +94,18 @@ class ContactsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
+            if let target = segue.destination as? ContactDetailViewController {
+                target.index = selectedPath.row
+            }
     }
-    */
+    
 
 }

@@ -12,6 +12,7 @@ class AddContactViewController: UIViewController {
     var addName: String = ""
     var addNumber: String = ""
     var addEmail: String = ""
+    var addDOB: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +26,6 @@ class AddContactViewController: UIViewController {
     
     @IBAction func numberField(_ sender: UITextField) {
         addNumber = sender.text!
-            
     }
     
     
@@ -34,8 +34,12 @@ class AddContactViewController: UIViewController {
     }
     
     
+    @IBAction func DOBField(_ sender: UITextField) {
+        addDOB = sender.text!
+    }
+    
     @IBAction func saveContact(_ sender: UIBarButtonItem) {
-            contactList.addContact(Name: addName, Number: addNumber, Email: addEmail)
+        contactList.addContact(Name: addName, Number: addNumber, Email: addEmail, DOB: addDOB)
             
     }
     
