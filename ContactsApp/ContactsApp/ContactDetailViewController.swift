@@ -14,10 +14,10 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var detailDOB: UILabel!
-    @IBOutlet weak var detailEmail: UILabel!
-    @IBOutlet weak var detailNumber: UILabel!
-    @IBOutlet weak var detailName: UILabel!
+    @IBOutlet weak var detailEmail: UITextField!
+    @IBOutlet weak var detailNumber: UITextField!
+    @IBOutlet weak var detailName: UITextField!
+    @IBOutlet weak var detailDOB: UITextField!
     
     
     
@@ -26,13 +26,14 @@ class ContactDetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+    
         nameLabel.text = contactList.contacts[index].Name
         numberLabel.text = contactList.contacts[index].Number
         detailName.text = contactList.contacts[index].Name
         detailNumber.text = contactList.contacts[index].Number
         detailEmail.text = contactList.contacts[index].Email
         detailDOB.text = contactList.contacts[index].DOB
+        
         // Replace with your base color
         let baseColor = UIColor.systemGray4
         // Create the gradient layer green
@@ -46,6 +47,8 @@ class ContactDetailViewController: UIViewController {
             view.backgroundColor = gradientColor
             viewDidAppear(true)
         }
+        
+        
     }
     func layerToUIColor(layer: CALayer) -> UIColor? {
         UIGraphicsBeginImageContext(layer.frame.size)

@@ -18,6 +18,7 @@
 		907525142A7D8DAD000F4DED /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907525132A7D8DAD000F4DED /* AddContactViewController.swift */; };
 		907525162A7D92A0000F4DED /* UserContacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 907525152A7D92A0000F4DED /* UserContacts.json */; };
 		907525182A7DA2B6000F4DED /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907525172A7DA2B6000F4DED /* ContactDetailViewController.swift */; };
+		90B43BEC2A898C1900A833A7 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B43BEB2A898C1900A833A7 /* EditContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		907525132A7D8DAD000F4DED /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		907525152A7D92A0000F4DED /* UserContacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserContacts.json; sourceTree = "<group>"; };
 		907525172A7DA2B6000F4DED /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		90B43BEB2A898C1900A833A7 /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				9075250D2A7C3326000F4DED /* ContactsTableViewController.swift */,
 				907525172A7DA2B6000F4DED /* ContactDetailViewController.swift */,
 				907525132A7D8DAD000F4DED /* AddContactViewController.swift */,
+				90B43BEB2A898C1900A833A7 /* EditContactViewController.swift */,
 				9075250F2A7CC0DD000F4DED /* Contact.swift */,
 				907525112A7CC0EC000F4DED /* ContactsList.swift */,
 				907524FF2A7C32EE000F4DED /* Main.storyboard */,
@@ -157,6 +160,7 @@
 				907525122A7CC0EC000F4DED /* ContactsList.swift in Sources */,
 				907525142A7D8DAD000F4DED /* AddContactViewController.swift in Sources */,
 				907525102A7CC0DD000F4DED /* Contact.swift in Sources */,
+				90B43BEC2A898C1900A833A7 /* EditContactViewController.swift in Sources */,
 				907525182A7DA2B6000F4DED /* ContactDetailViewController.swift in Sources */,
 				907524FA2A7C32EE000F4DED /* AppDelegate.swift in Sources */,
 				907524FC2A7C32EE000F4DED /* SceneDelegate.swift in Sources */,
