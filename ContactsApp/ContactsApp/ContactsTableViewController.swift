@@ -24,7 +24,32 @@ class ContactsTableViewController: UITableViewController {
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.tintColor = .systemRed
         
+        // Replace with your base color
+        let baseColor = UIColor.red
+        // Create the gradient layer green
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+            gradientLayer.colors = [baseColor.cgColor, UIColor.white.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        if let gradientColor = layerToUIColor(layer: gradientLayer) {
+            // Use the gradientColor as needed
+            view.backgroundColor = gradientColor
+            viewDidAppear(true)
+        }
     }
+    func layerToUIColor(layer: CALayer) -> UIColor? {
+                    UIGraphicsBeginImageContext(layer.frame.size)
+                    defer { UIGraphicsEndImageContext() }
+                    
+                    guard let context = UIGraphicsGetCurrentContext() else { return nil }
+                    layer.render(in: context)
+                    
+                    if let image = UIGraphicsGetImageFromCurrentImageContext() {
+                        return UIColor(patternImage: image)
+                    }
+                    return nil
+                }
 
     @IBAction func refreshTable(_ sender: UIBarButtonItem) {
         tableView.reloadData()

@@ -29,7 +29,32 @@ class ContactDetailViewController: UIViewController {
         detailNumber.text = contactList.contacts[index].Number
         detailEmail.text = contactList.contacts[index].Email
         detailDOB.text = contactList.contacts[index].DOB
-        
+        // Replace with your base color
+        let baseColor = UIColor.black
+        // Create the gradient layer green
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+            gradientLayer.colors = [baseColor.cgColor, UIColor.white.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        if let gradientColor = layerToUIColor(layer: gradientLayer) {
+            // Use the gradientColor as needed
+            view.backgroundColor = gradientColor
+            viewDidAppear(true)
+        }
+    }
+    func layerToUIColor(layer: CALayer) -> UIColor? {
+                    UIGraphicsBeginImageContext(layer.frame.size)
+                    defer { UIGraphicsEndImageContext() }
+                    
+                    guard let context = UIGraphicsGetCurrentContext() else { return nil }
+                    layer.render(in: context)
+                    
+                    if let image = UIGraphicsGetImageFromCurrentImageContext() {
+                        return UIColor(patternImage: image)
+                    }
+                    return nil
+                }
     }
     
 
@@ -43,4 +68,4 @@ class ContactDetailViewController: UIViewController {
     }
     */
 
-}
+
