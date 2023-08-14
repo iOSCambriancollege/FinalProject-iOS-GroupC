@@ -21,9 +21,14 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet weak var detailDOB: UITextField!
     
     @IBOutlet weak var backButton: UINavigationItem!
+    
+    // Edit button action
     @IBAction func EditButton(_ sender: UIButton) {
+        // Check the button title to determine the action
         if(sender.titleLabel?.text == "Edit"){
+            // Enable editing mode
             sender.setTitle("Save", for: UIControl.State.normal)
+            // Enable editing for text fields and change their background color
             detailName.isEnabled = true
             detailNumber.isEnabled = true
             detailEmail.isEnabled = true
@@ -34,6 +39,7 @@ class ContactDetailViewController: UIViewController {
             detailDOB.backgroundColor = .systemYellow
         }
         else if (sender.titleLabel?.text == "Save"){
+            // Handle Save action
             if(detailName.text == ""){
                 detailName.placeholder = "Please Enter Name"
                 errorLabel.text = "Name cannot be null"
@@ -70,8 +76,11 @@ class ContactDetailViewController: UIViewController {
         }
         
     }
-    
+    // Function to validate and display error when name is empty
     @objc func checkAndDisplayError(detailName: UITextField){
+        
+        // Check if the name field is empty
+        // Display error and handle UI changes
         if(detailName.text?.count == 0){
             errorLabel.text = "Name cannot be null"
             detailName.text = contactList.contacts[index].Name
@@ -88,11 +97,15 @@ class ContactDetailViewController: UIViewController {
             errorLabel.text = ""
         }
     }
+    // Index of the selected contact
     var index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        // Populate UI elements with contact detail
+        // Disable text fields for viewing
+        // Set background gradient color
         
         nameLabel.text = contactList.contacts[index].Name
         numberLabel.text = contactList.contacts[index].Number
@@ -124,7 +137,9 @@ class ContactDetailViewController: UIViewController {
         
         
     }
+    // Function to convert layer to UIColor
     func layerToUIColor(layer: CALayer) -> UIColor? {
+        // Convert layer to UIColor
         UIGraphicsBeginImageContext(layer.frame.size)
         defer { UIGraphicsEndImageContext() }
         
@@ -176,15 +191,5 @@ class ContactDetailViewController: UIViewController {
         contactList.contacts.remove(at: index)
     }
 }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

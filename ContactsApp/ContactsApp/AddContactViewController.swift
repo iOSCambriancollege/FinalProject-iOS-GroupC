@@ -9,8 +9,11 @@ import UIKit
 
 class AddContactViewController: UIViewController {
     
+    // Outlets for UI elements
     @IBOutlet weak var errorNumber: UILabel!
     @IBOutlet weak var errorName: UILabel!
+    
+    // Variables to store contact details
     var addName: String = ""
     var addNumber: String = ""
     var addEmail: String = ""
@@ -32,8 +35,9 @@ class AddContactViewController: UIViewController {
             view.backgroundColor = gradientColor
             viewDidAppear(true)
         }
-        
     }
+    
+    // Function to convert layer to UIColor
     func layerToUIColor(layer: CALayer) -> UIColor? {
                     UIGraphicsBeginImageContext(layer.frame.size)
                     defer { UIGraphicsEndImageContext() }
@@ -47,7 +51,9 @@ class AddContactViewController: UIViewController {
                     return nil
                 }
     
+    // Action for the name field
     @IBAction func nameField(_ sender: UITextField) {
+        // Validate and set the name
         if(sender.text == ""){
             errorName.text = "Name cannot be empty! Please input a Name."
         }
@@ -56,8 +62,9 @@ class AddContactViewController: UIViewController {
         }
     }
     
+    // Action for the number field
     @IBAction func numberField(_ sender: UITextField) {
-    
+        // Validate and set the Number
         if(sender.text == ""){
             errorNumber.text = "Number cannot be empty! Please input a Number."
         }
@@ -66,16 +73,17 @@ class AddContactViewController: UIViewController {
         }
     }
     
-    
+    // Action for the email field
     @IBAction func emailFIeld(_ sender: UITextField) {
         addEmail = sender.text!
     }
     
-    
+    // Action for the DOB field
     @IBAction func DOBField(_ sender: UITextField) {
         addDOB = sender.text!
     }
     
+    // Action for the save field
     @IBAction func saveButton(_ sender: Any) {
         if(addName == ""){
             errorName.text = "Name cannot be empty! Please input a Name."
@@ -87,16 +95,4 @@ class AddContactViewController: UIViewController {
             contactList.addContact(Name: addName, Number: addNumber, Email: addEmail, DOB: addDOB)
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

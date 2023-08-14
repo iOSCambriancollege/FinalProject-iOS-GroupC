@@ -1,32 +1,186 @@
 {
    "contacts": [
       {
-        "Name": "Majid Pawar",
+        "Name": "Majid",
+        "Number": "548-333-6412",
+        "Email": "majidpawar@gmail.com",
+        "DOB": "9-10-1997"
+      },
+      {
+          "Name": "Jayant",
+          "Number": "416-323-3422",
+          "Email": "jayant@gmail.com",
+          "DOB": "17-02-1996"
+      },
+      {
+          "Name": "Prashant",
+          "Number": "614-232-5434",
+          "Email": "prashant@gmail.com",
+          "DOB": "12-10-1994"
+      },
+      {
+          "Name": "Pankaj",
+          "Number": "548-225-9865",
+          "Email": "pankaj@gmail.com",
+          "DOB": "11-5-1992"
+      },
+      {
+          "Name": "Bontu",
+          "Number": "614-211-9889",
+          "Email": "bontu@gmail.com",
+          "DOB": "5-8-1998"
+      },
+      {
+        "Name": "Azhar",
         "Number": "548-333-6412",
         "Email": "majidpawar@gmail.com",
         "DOB": "9-10-1997"
         
       },
       {
-          "Name": "Jayant Pawar",
+          "Name": "Mehmood",
           "Number": "416-323-3422",
           "Email": "jayant@gmail.com",
           "DOB": "17-02-1996"
       },
       {
-          "Name": "Prashant Pawar",
+          "Name": "Mehboob",
           "Number": "614-232-5434",
           "Email": "prashant@gmail.com",
           "DOB": "12-10-1994"
       },
       {
-          "Name": "Pankaj Pawar",
+          "Name": "Musharraf",
           "Number": "548-225-9865",
           "Email": "pankaj@gmail.com",
           "DOB": "11-5-1992"
       },
       {
-          "Name": "Bontu Pawar",
+          "Name": "Rukhsar",
+          "Number": "614-211-9889",
+          "Email": "bontu@gmail.com",
+          "DOB": "5-8-1998"
+      },
+      {
+        "Name": "Umera",
+        "Number": "548-333-6412",
+        "Email": "majidpawar@gmail.com",
+        "DOB": "9-10-1997"
+        
+      },
+      {
+          "Name": "Vaishnavi",
+          "Number": "416-323-3422",
+          "Email": "jayant@gmail.com",
+          "DOB": "17-02-1996"
+      },
+      {
+          "Name": "Sunny",
+          "Number": "614-232-5434",
+          "Email": "prashant@gmail.com",
+          "DOB": "12-10-1994"
+      },
+      {
+          "Name": "Robin",
+          "Number": "548-225-9865",
+          "Email": "pankaj@gmail.com",
+          "DOB": "11-5-1992"
+      },
+      {
+          "Name": "Sunkalp",
+          "Number": "614-211-9889",
+          "Email": "bontu@gmail.com",
+          "DOB": "5-8-1998"
+      },
+      {
+        "Name": "Surti",
+        "Number": "548-333-6412",
+        "Email": "majidpawar@gmail.com",
+        "DOB": "9-10-1997"
+        
+      },
+      {
+          "Name": "Pukar",
+          "Number": "416-323-3422",
+          "Email": "jayant@gmail.com",
+          "DOB": "17-02-1996"
+      },
+      {
+          "Name": "Augustine",
+          "Number": "614-232-5434",
+          "Email": "prashant@gmail.com",
+          "DOB": "12-10-1994"
+      },
+      {
+          "Name": "John",
+          "Number": "548-225-9865",
+          "Email": "pankaj@gmail.com",
+          "DOB": "11-5-1992"
+      },
+      {
+          "Name": "Osmane",
+          "Number": "614-211-9889",
+          "Email": "bontu@gmail.com",
+          "DOB": "5-8-1998"
+      },
+      {
+        "Name": "Desmond",
+        "Number": "548-333-6412",
+        "Email": "majidpawar@gmail.com",
+        "DOB": "9-10-1997"
+        
+      },
+      {
+          "Name": "Karim",
+          "Number": "416-323-3422",
+          "Email": "jayant@gmail.com",
+          "DOB": "17-02-1996"
+      },
+      {
+          "Name": "Nabin",
+          "Number": "614-232-5434",
+          "Email": "prashant@gmail.com",
+          "DOB": "12-10-1994"
+      },
+      {
+          "Name": "Jafar",
+          "Number": "548-225-9865",
+          "Email": "pankaj@gmail.com",
+          "DOB": "11-5-1992"
+      },
+      {
+          "Name": "Harsh",
+          "Number": "614-211-9889",
+          "Email": "bontu@gmail.com",
+          "DOB": "5-8-1998"
+      },
+      {
+        "Name": "Arbin",
+        "Number": "548-333-6412",
+        "Email": "majidpawar@gmail.com",
+        "DOB": "9-10-1997"
+        
+      },
+      {
+          "Name": "Samiksha",
+          "Number": "416-323-3422",
+          "Email": "jayant@gmail.com",
+          "DOB": "17-02-1996"
+      },
+      {
+          "Name": "Sahil",
+          "Number": "614-232-5434",
+          "Email": "prashant@gmail.com",
+          "DOB": "12-10-1994"
+      },
+      {
+          "Name": "Rishab",
+          "Number": "548-225-9865",
+          "Email": "pankaj@gmail.com",
+          "DOB": "11-5-1992"
+      },
+      {
+          "Name": "Shafa",
           "Number": "614-211-9889",
           "Email": "bontu@gmail.com",
           "DOB": "5-8-1998"
