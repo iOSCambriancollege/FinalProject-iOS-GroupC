@@ -24,7 +24,7 @@ class ContactsTableViewController: UITableViewController {
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.tintColor = .systemRed
         navigationController?.navigationBar.backgroundColor = .white
-        
+        contactList.contacts.sort { $0.Name < $1.Name }
         // Replace with your base color
         let baseColor = UIColor.white
         // Create the gradient layer green
@@ -78,7 +78,6 @@ class ContactsTableViewController: UITableViewController {
         return cell
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
