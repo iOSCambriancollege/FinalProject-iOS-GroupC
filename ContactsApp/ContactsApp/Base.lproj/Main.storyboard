@@ -17,9 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Contacts" id="FRE-4c-NC9">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="yh6-Tf-H6d" id="gYT-Pn-TkH"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="contactListCell" textLabel="mj8-4K-yJs" imageView="PCu-xp-Ijv" style="IBUITableViewCellStyleDefault" id="rB0-JC-hIf">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rB0-JC-hIf" id="WSW-XE-hB9">
                                     <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
@@ -53,7 +61,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="yh6-Tf-H6d" id="jQI-rY-1BA"/>
-                            <outlet property="delegate" destination="yh6-Tf-H6d" id="OJ8-Kc-0J6"/>
+                            <outlet property="delegate" destination="yh6-Tf-H6d" id="78L-lo-pcz"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="FP5-1f-ELi">
@@ -71,6 +79,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contactSearchBar" destination="FRE-4c-NC9" id="2JN-ij-GeB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGj-3a-rFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,6 +391,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="SJd-14-QQY"/>
         <segue reference="eNh-WD-luT"/>
     </inferredMetricsTieBreakers>
     <resources>

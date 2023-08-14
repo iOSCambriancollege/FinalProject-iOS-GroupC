@@ -9,14 +9,16 @@ import UIKit
 
 var contactList = ContactsList()
 var myIndex = 0
-class ContactsTableViewController: UITableViewController {
-
+var contactName = contactList.contacts.map{$0.Name}
+class ContactsTableViewController: UITableViewController,UISearchBarDelegate {
+    @IBOutlet weak var contactSearchBar: UISearchBar!
     @IBAction func addContactButton(_ sender: UIBarButtonItem) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -64,7 +66,7 @@ class ContactsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return contactList.contacts.count
+        return contactName.count
     }
 
     
@@ -72,11 +74,12 @@ class ContactsTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactListCell", for: indexPath)
         let row = indexPath.row
-        cell.textLabel?.text = contactList.contacts[row].Name
+        cell.textLabel?.text = contactName[row]
 //         Configure the cell...
 
         return cell
     }
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -131,6 +134,13 @@ class ContactsTableViewController: UITableViewController {
                 target.index = selectedPath.row
             }
     }
-    
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            contactName = contactName.filter({$0.contains(searchText)})
+            tableView.reloadData()
+        }else{
+            contactName = contactList.contacts.map{$0.Name}
+            tableView.reloadData()
+        }
+    }
 }
