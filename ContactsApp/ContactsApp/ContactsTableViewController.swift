@@ -77,7 +77,7 @@ class ContactsTableViewController: UITableViewController,UISearchBarDelegate {
     //Total rows of contacts array
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return contactName.count
+        return contactList.contacts.count
     }
 
     //cell View to display contact name as List
@@ -85,7 +85,7 @@ class ContactsTableViewController: UITableViewController,UISearchBarDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactListCell", for: indexPath)
         let row = indexPath.row
-        cell.textLabel?.text = contactName[row]
+        cell.textLabel?.text = contactList.contacts[row].Name
 //         Configure the cell...
 
         return cell
@@ -130,13 +130,13 @@ class ContactsTableViewController: UITableViewController,UISearchBarDelegate {
     }
     
     //Search bar filtering through text change and reloading the list view again
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText != "" {
-            contactName = contactList.contacts.map{$0.Name}.filter({$0.contains(searchText)})
-            tableView.reloadData()
-        }else{
-            contactName = contactList.contacts.map{$0.Name}
-            tableView.reloadData()
-        }
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchText != "" {
+//            contactName = contactList.contacts.map{$0.Name}.filter({$0.contains(searchText)})
+//            tableView.reloadData()
+//        }else{
+//            contactName = contactList.contacts.map{$0.Name}
+//            tableView.reloadData()
+//        }
+//    }
 }
