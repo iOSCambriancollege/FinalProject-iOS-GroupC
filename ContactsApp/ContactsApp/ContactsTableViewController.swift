@@ -23,10 +23,10 @@ class ContactsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.tintColor = .systemRed
-        navigationController?.navigationBar.backgroundColor = .systemGray4
+        navigationController?.navigationBar.backgroundColor = .white
         
         // Replace with your base color
-        let baseColor = UIColor.systemGray4
+        let baseColor = UIColor.white
         // Create the gradient layer green
         let gradientLayer = CAGradientLayer()
             gradientLayer.frame = view.bounds

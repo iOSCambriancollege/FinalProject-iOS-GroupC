@@ -9,6 +9,8 @@ import UIKit
 
 class AddContactViewController: UIViewController {
     
+    @IBOutlet weak var errorNumber: UILabel!
+    @IBOutlet weak var errorName: UILabel!
     var addName: String = ""
     var addNumber: String = ""
     var addEmail: String = ""
@@ -18,7 +20,7 @@ class AddContactViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         // Replace with your base color
-        let baseColor = UIColor.systemGray4
+        let baseColor = UIColor.white
         // Create the gradient layer green
         let gradientLayer = CAGradientLayer()
             gradientLayer.frame = view.bounds
@@ -46,11 +48,22 @@ class AddContactViewController: UIViewController {
                 }
     
     @IBAction func nameField(_ sender: UITextField) {
-        addName = sender.text!
+        if(sender.text == ""){
+            errorName.text = "Name cannot be empty! Please input a Name."
+        }
+        else{
+            addName = sender.text!
+        }
     }
     
     @IBAction func numberField(_ sender: UITextField) {
-        addNumber = sender.text!
+    
+        if(sender.text == ""){
+            errorNumber.text = "Number cannot be empty! Please input a Number."
+        }
+        else{
+            addNumber = sender.text!
+        }
     }
     
     
@@ -64,7 +77,15 @@ class AddContactViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        contactList.addContact(Name: addName, Number: addNumber, Email: addEmail, DOB: addDOB)
+        if(addName == ""){
+            errorName.text = "Name cannot be empty! Please input a Name."
+        }
+        else if (addNumber == ""){
+            errorNumber.text = "Number cannot be empty! Please input a Number."
+        }
+        else{
+            contactList.addContact(Name: addName, Number: addNumber, Email: addEmail, DOB: addDOB)
+        }
     }
     
     
